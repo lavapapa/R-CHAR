@@ -1,0 +1,74 @@
+# Evaluation Configuration
+
+# SocialBench Evaluation
+socialbench:
+  # Dataset paths
+  dataset_path: "./datasets_cache/social-bench"
+
+  # Evaluation splits
+  splits: ["test", "validation"]
+
+  # Batch size for evaluation
+  batch_size: 1
+
+  # Maximum concurrent evaluations
+  max_concurrent: 5
+
+  # Save detailed results
+  save_detailed_results: true
+
+  # Generate comparison plots
+  generate_plots: true
+
+# Custom Evaluation Metrics
+custom_metrics:
+  # Character consistency
+  character_consistency:
+    weight: 0.3
+    enable: true
+
+  # Emotional expression
+  emotional_expression:
+    weight: 0.2
+    enable: true
+
+  # Knowledge boundaries
+  knowledge_boundaries:
+    weight: 0.2
+    enable: true
+
+  # Response relevance
+  response_relevance:
+    weight: 0.3
+    enable: true
+
+# Model Comparison Settings
+model_comparison:
+  # Models to compare
+  models:
+    baseline: "qwen2.5:7b"
+    rchar: "mind-tuning"
+    reference: "gpt-4"
+
+  # Comparison metrics
+  metrics: ["accuracy", "consistency", "engagement"]
+
+  # Statistical tests
+  enable_statistical_tests: true
+
+  # Significance level
+  significance_level: 0.05
+
+# Output Settings
+output:
+  # Results directory
+  results_dir: "./evaluation_results"
+
+  # Report format: "markdown", "html", "pdf"
+  report_format: "markdown"
+
+  # Include visualizations
+  include_visualizations: true
+
+  # Save raw responses
+  save_raw_responses: true

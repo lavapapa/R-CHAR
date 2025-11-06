@@ -1,0 +1,72 @@
+# Model Configuration Presets
+
+# OpenAI Models
+openai:
+  gpt4:
+    name: "gpt-4"
+    max_tokens: 4096
+    temperature: 0.7
+    timeout: 120
+
+  gpt4_turbo:
+    name: "gpt-4-1106-preview"
+    max_tokens: 4096
+    temperature: 0.7
+    timeout: 120
+
+  gpt35_turbo:
+    name: "gpt-3.5-turbo"
+    max_tokens: 4096
+    temperature: 0.7
+    timeout: 60
+
+# Ollama Local Models
+ollama:
+  qwen2_5_7b:
+    name: "qwen2.5:7b"
+    max_tokens: 2048
+    temperature: 0.7
+    timeout: 120
+
+  qwen2_5_32b:
+    name: "qwen2.5:32b"
+    max_tokens: 4096
+    temperature: 0.7
+    timeout: 180
+
+  llama3_8b:
+    name: "llama3:8b"
+    max_tokens: 2048
+    temperature: 0.7
+    timeout: 120
+
+  llama3_70b:
+    name: "llama3:70b"
+    max_tokens: 4096
+    temperature: 0.7
+    timeout: 240
+
+# Azure OpenAI
+azure:
+  gpt4:
+    name: "gpt-4"
+    max_tokens: 4096
+    temperature: 0.7
+    timeout: 120
+    api_version: "2023-12-01-preview"
+
+# Custom Model Configurations
+custom:
+  # For R-CHAR trained models
+  rchar_qwen2_5_7b:
+    name: "mind-tuning"  # Your trained model name
+    max_tokens: 2048
+    temperature: 0.7
+    timeout: 120
+
+  # For other fine-tuned models
+  fine_tuned_model:
+    name: "your-fine-tuned-model"
+    max_tokens: 2048
+    temperature: 0.7
+    timeout: 120

@@ -1,0 +1,145 @@
+# R-CHAR Framework Default Configuration
+
+# LLM Configuration
+llm:
+  # Type: "openai", "azure", "ollama", "custom"
+  type: "ollama"
+
+  # Base URL for API
+  base_url: "http://localhost:11434/v1/"
+
+  # Model name
+  model: "qwen2.5:7b"
+
+  # API key (use "EMPTY" for local models)
+  api_key: "EMPTY"
+
+  # Request timeout in seconds
+  timeout: 60
+
+# Optimization Parameters
+optimization:
+  # Maximum optimization iterations
+  max_iterations: 4
+
+  # Maximum role-playing iterations per optimization
+  max_roleplay_iterations: 3
+
+  # Maximum scenarios per persona
+  max_scenarios_per_persona: 5
+
+  # Enable debug logging
+  debug_mode: false
+
+  # Improvement threshold for accepting optimizations
+  improvement_threshold: 0.0
+
+# Generation Parameters
+generation:
+  # Temperature for sampling
+  temperature: 0.7
+
+  # Maximum tokens to generate
+  max_tokens: 2048
+
+  # Top-p sampling
+  top_p: 0.9
+
+  # Frequency penalty
+  frequency_penalty: 0.0
+
+  # Presence penalty
+  presence_penalty: 0.0
+
+# Evaluation Settings
+evaluation:
+  # Save intermediate results during optimization
+  save_intermediate_results: true
+
+  # Generate detailed evaluation reports
+  generate_detailed_reports: true
+
+  # Evaluation timeout in seconds
+  evaluation_timeout: 120
+
+  # Minimum score threshold for accepting results
+  min_score_threshold: 20
+
+# Output Configuration
+output:
+  # Base directory for all outputs
+  base_dir: "./output"
+
+  # Output format: "jsonl", "json", "both"
+  format: "jsonl"
+
+  # Include metadata in outputs
+  include_metadata: true
+
+  # Create timestamped subdirectories
+  use_timestamped_dirs: true
+
+  # Compression for large outputs
+  compress_large_files: false
+
+# Dataset Configuration
+datasets:
+  # Cache directory for downloaded datasets
+  cache_dir: "./datasets_cache"
+
+  # Default datasets to use
+  default_datasets:
+    - "persona-hub"
+    - "role-bench"
+    - "character-profiling"
+
+  # Maximum items to load from each dataset
+  max_items_per_dataset: 1000
+
+  # Enable dataset validation
+  validate_datasets: true
+
+# Async Processing
+async_processing:
+  # Number of concurrent workers
+  max_concurrent_workers: 5
+
+  # Worker timeout in seconds
+  worker_timeout: 300
+
+  # Enable progress tracking
+  show_progress: true
+
+  # Retry failed tasks
+  retry_failed_tasks: true
+
+  # Maximum retry attempts
+  max_retry_attempts: 3
+
+# Logging Configuration
+logging:
+  # Log level: "DEBUG", "INFO", "WARNING", "ERROR"
+  level: "INFO"
+
+  # Log file path
+  file_path: "./logs/rchar.log"
+
+  # Maximum log file size in MB
+  max_file_size: 100
+
+  # Number of backup log files
+  backup_count: 5
+
+  # Log format
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Experimental Features
+experimental:
+  # Enable experimental optimization methods
+  enable_experimental_methods: false
+
+  # Use advanced prompt engineering
+  use_advanced_prompts: false
+
+  # Enable cross-model evaluation
+  cross_model_evaluation: false
